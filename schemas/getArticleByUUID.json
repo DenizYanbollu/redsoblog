@@ -1,0 +1,10 @@
+{
+    "id": "getArticleByUUID",
+    "type": "object",
+    "properties": {
+      "searchQuery": {"type": "string", "format": "UUID"}
+    },
+    "required": [
+        "searchQuery"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "submitArticle",
+    "type": "object",
+    "properties": {
+        "submitData": {
+            "type:": "object",
+            "properties": {
+                "title":  {"type": "string"},
+                "description": {"type": "string"},
+                "content": {"type": "string"},  
+                "tags": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                } 
+            },
+            "required": [
+                "title",
+                "description",
+                "content",  
+                "tags"
+            ]
+        }
+    }
+}
