@@ -33,7 +33,6 @@ function Article(request) {
             }
 
             case "getArticleByUUID": {
-                console.log(requestData)
                     redisClient.hgetall(`article:${requestData.searchQuery}`, (_, val) => res(val))
                 break;
             }
