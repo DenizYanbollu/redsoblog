@@ -5,7 +5,6 @@ import "./Navbar.css"
 const Navbar = () =>
     (
         <div className="Navbar">
-            asdsadsa
         </div>
     )
 

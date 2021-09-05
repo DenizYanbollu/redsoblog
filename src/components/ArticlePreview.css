@@ -1,0 +1,24 @@
+.ArticlePreview {
+    width: 500px;
+    color: white;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.5rem;
+    border-left: 0.6rem solid var(--crayola);
+    margin-bottom: 1.7rem;
+}
+
+.ArticlePreview > .Title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.ArticlePreview > .Desc {
+    font-size: medium;
+}
+
+.ArticlePreview > .Info {
+    font-size: small;
+}

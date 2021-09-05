@@ -1,14 +1,19 @@
-const express = require('express')
-const app = express()
-const http = require('http')
-const server = http.createServer(app)
-const { Server } = require("socket.io")
-const io = new Server(server)
-
+const httpServer = require("http").createServer()
+const io = require("socket.io")(httpServer,  {
+    cors: {
+      origin: "*",
+      methods: ["GET", "POST"],
+      credentials: true
+    }
+  })
 const socketHandler = require("./socketHandler")
 
-io.on('connection', (socket) => socketHandler(socket))
+io.on('connection', (socket) => {
+  socketHandler(socket)
+  socket.emit("connection", true)
+  console.log("Bağlandı")
+})
 
-server.listen(3000, () => {
+httpServer.listen(3000, () => {
   console.log('listening on *:3000')
 })

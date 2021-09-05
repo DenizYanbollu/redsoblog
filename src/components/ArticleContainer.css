@@ -18,6 +18,7 @@
 
 .fatTitle {
     color: white;
+    padding-left: 1rem;
     border-left: 0.4rem solid white;
     text-shadow: -1px 2px 3px rgba(0, 0, 0, 0.16);
     font-family: 'Montserrat', sans-serif;
@@ -34,16 +35,17 @@
     align-items: center;
 }
 
-.info > .user {
-    color: var(--crayola);
-}
-
 .info > .userImage {
     border-radius: 50%;
     border: solid 0.01rem var(--crayola);
     width: 28px;
     height: 28px;
     margin-right: 0.5rem;
+}
+
+.info > .user {
+    color: var(--crayola);
+    cursor: pointer;
 }
   
 .info > .date {

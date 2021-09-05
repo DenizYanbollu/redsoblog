@@ -1,0 +1,10 @@
+{
+    "id": "getArticleBySlug",
+    "type": "object",
+    "properties": {
+      "searchQuery": {"type": "string"}
+    },
+    "required": [
+        "searchQuery"
+    ]
+}

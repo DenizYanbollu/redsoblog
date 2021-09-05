@@ -1,0 +1,10 @@
+{
+    "id": "getAllArticles",
+    "type": "object",
+    "properties": {
+      "start": {"type": "number"}
+    },
+    "required": [
+        "start"
+    ]
+}
