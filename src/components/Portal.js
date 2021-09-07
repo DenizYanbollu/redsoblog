@@ -9,12 +9,6 @@ import { socket } from '../App'
 const Portal = () => {
     const [articleList, setArticleList] = useState([])
     const [articleStart, setArticleStart] = useState(0)
-    
-    const refreshArticles = () =>
-        socket.emit("article:get", {
-            "requestType": "getAllArticles",
-            "start": 0
-        })
 
     const loadArticles = (start = undefined) => { 
         socket.emit("article:get", {
@@ -35,10 +29,11 @@ const Portal = () => {
 
     return (
         <div className="Portal">
+            <div className="Title">
+                Recent Articles
+            </div>
             {
-                articleList?.map((article, i) => {
-                    return <ArticlePreview key={i} article={article}/>
-                })
+                articleList?.map((article, i) => <ArticlePreview key={i} article={article}/>)
             }
         </div>
     )

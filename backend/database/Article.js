@@ -5,8 +5,9 @@ const redisClient = require("../redis")
 function Article(request) {
     const {requestData} = request
 
+    console.log(requestData)
+
     return new Promise((res, rej) => {
-        console.log(requestData.requestType)
         switch (requestData.requestType) {
             case "submitArticle": {
                 const articleUUID = uuidv4()
@@ -23,6 +24,23 @@ function Article(request) {
                 break;
             }
 
+            case "getArticles": {
+                const {searchQuery} = requestData
+
+                const queries = []
+
+                if (searchQuery.fromUser.length === 1) {
+                    queries.push(`@owner:${searchQuery.fromUser}`)  
+                } 
+
+                redisClient.call(
+                    "FT.SEARCH",
+                    "article-index",
+                    queries
+                , (_, val) => res(val))
+                
+                break;
+            }
             case "getArticleByTitle": {
                 redisClient.call(
                     "FT.SEARCH",
@@ -33,11 +51,10 @@ function Article(request) {
             }
 
             case "getArticleBySlug": {
-                console.log(requestData)
                 redisClient.call(
                     "FT.SEARCH",
                     "article-index",
-                    `@slug:%${requestData.searchQuery}%`
+                    `@slug:${requestData.searchQuery.split("-")}`
                 , (_, val) => res(val))
                 break;
             }

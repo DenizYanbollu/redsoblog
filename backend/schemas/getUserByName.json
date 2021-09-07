@@ -1,0 +1,10 @@
+{
+    "id": "getUserByName",
+    "type": "object",
+    "properties": {
+      "searchQuery": {"type": "string"}
+    },
+    "required": [
+        "searchQuery"
+    ]
+}

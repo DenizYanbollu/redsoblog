@@ -1,0 +1,14 @@
+{
+    "id": "getArticles",
+    "type": "object",
+    "properties": {
+        "searchQuery": {
+            "type:": "object",
+            "properties": {
+                "fromUser":  {"type": "array"},
+                "betweenDates": {"type": "array"}
+            },
+            "required": []
+        }
+    }
+}

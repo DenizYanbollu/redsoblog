@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Link, useLocation } from "react-router-dom"
+import parseRedis from '../utils/parseRedis'
 
 
 import "./ArticlePreview.css"
@@ -7,13 +8,11 @@ import "./ArticlePreview.css"
 const ArticlePreview = ({article}) => {
     if (typeof(article) !== "object") return null
 
-    const articleObj = {} 
-    let aL = article.length
+    const articleObj = parseRedis(article)
 
-    while(aL) {
-        aL % 2 && (articleObj[article[aL-1]] = article[aL])
-        aL--
-    }
+    const publishDate = new Date(articleObj.publishDate * 1000)
+        .toLocaleString("tr-TR", {year: "numeric", month: "long", day: "numeric"}) // 2000 Ocak 1
+    // Kullanıcıyı UUIDsine göre cachele
 
     return (
         <div className="ArticlePreview">
@@ -26,7 +25,8 @@ const ArticlePreview = ({article}) => {
                 {articleObj.description}
             </div>
             <div className="Info">
-                {articleObj.publishDate} - <b>{articleObj.owner}</b> - {articleObj.tags}
+                {publishDate} - 
+                <b> <Link to={`/user/${articleObj.owner}`}>{articleObj.owner}</Link></b> - {articleObj.tags}
             </div>
         </div>
     )

@@ -1,0 +1,43 @@
+.User {
+    height: 100%;
+    width: 100%;
+}
+
+.ProfileHeader {
+    background-color: rgba(32, 32, 32, 0.794);
+    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.52);
+    padding: 1rem;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.ProfileHeader > .userInfo {
+    color: whitesmoke;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.userInfo > .fullName {
+    color: whitesmoke;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.userInfo .nick {
+    align-self: left;
+}
+
+.ProfileHeader > img {
+    border: solid 0.05rem var(--crayola);
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+}   
+
+.User > .ArticleSearch {
+    width: 100%;
+   margin-top: 1.75rem;
+}

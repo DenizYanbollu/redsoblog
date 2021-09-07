@@ -1,3 +1,13 @@
 .Portal {
     height: 100%;
+    width: 100%;
+}
+
+.Portal > .Title {
+    padding: 0.2rem;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 650;
+    font-size: 1.7rem;
+    width: 100%;
 }

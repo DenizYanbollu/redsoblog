@@ -10,7 +10,9 @@ const schemaTypes = {
     "getArticleByTitle": require("./schemas/getArticleByTitle.json"),
     "submitArticle": require("./schemas/submitArticle.json"),
     "getAllArticles": require("./schemas/getAllArticles.json"),
-    "getArticleBySlug": require("./schemas/getArticleBySlug.json")
+    "getArticleBySlug": require("./schemas/getArticleBySlug.json"),
+    "getUserByName": require("./schemas/getUserByName.json"),
+    "getArticles": require("./schemas/getArticles.json")
 }
 
 function schemaValidator(input, schemaType) {
